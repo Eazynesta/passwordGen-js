@@ -1,0 +1,13 @@
+body{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+};
+
+
+#generate {
+    /* Your CSS styles here */
+    background-color: blue;
+    color: white;
+    padding: 10px;
+}
