@@ -1,10 +1,11 @@
 const genButton = document.getElementById("generate");
 const thePass = document.getElementById("thePass");
-let passLength;
-const includeNumber = true;
-const includeLower = true;
-const includeUpper = true;
-const includeSymbol = true;
+
+const lowerCaseCheckbox = document.getElementById("lowerCase");
+const upperCaseCheckbox = document.getElementById("upperCase");
+const numbersCheckbox = document.getElementById("numbers");
+const symbolsCheckbox = document.getElementById("symbols");
+
 function generate(passLength,includeLower,includeNumber,includeSymbol,includeUpper){
     const lower = "abcdefghijklmnopqrstuvwxyz";
     const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -28,12 +29,18 @@ function generate(passLength,includeLower,includeNumber,includeSymbol,includeUpp
 };
 
 
-genButton.onclick = function(){
-    passLength = document.getElementById("textBox").value;
-    let password = generate(passLength,includeLower,includeNumber,includeSymbol,includeUpper);
-    thePass.textContent = `${password}`;
-    console.log(`Generated Pass:: ${password}`);
+genButton.onclick = function() {
+    const passLength = document.getElementById("textBox").value;
+
+    // Check the state of each checkbox
+    const includeLower = lowerCaseCheckbox.checked;
+    const includeUpper = upperCaseCheckbox.checked;
+    const includeNumber = numbersCheckbox.checked;
+    const includeSymbol = symbolsCheckbox.checked;
+
+    // Generate password based on the selected options
+    let password = generate(passLength, includeLower, includeNumber, includeSymbol, includeUpper);
+    thePass.textContent = password;
+    console.log(`Generated Pass: ${password}`);
 };
-
-
 

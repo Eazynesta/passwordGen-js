@@ -10,7 +10,19 @@
     <div id="container">
       <h1>Random Password Generator</h1>
       <label for="textBox">Enter the Length of Pass:</label><br>
-      <input id="textBox" type="number" min="1">
+      <input id="textBox" type="number" min="1"><br>
+      <input type="checkbox" name="name1" id="lowerCase">
+      <label for="lowerCase">LowerCase</label><br>
+
+      <input type="checkbox" name="name2" id="upperCase">
+      <label for="UpperCase">UpperCase</label><br>
+
+      <input type="checkbox" name="name3" id="numbers">
+      <label for="numbers">Numbers</label><br>
+
+      <input type="checkbox" name="name4" id="symbols">
+      <label for="symbols">Symbols</label><br>
+
       <button id="generate">Generate</button>
       <p id="thePass"></p>   
     </div>
